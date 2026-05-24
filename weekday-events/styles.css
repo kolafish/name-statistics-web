@@ -183,9 +183,7 @@ main {
 
 .controls-band {
   display: grid;
-  grid-template-columns:
-    minmax(220px, 1.1fr) minmax(128px, 0.55fr) minmax(190px, 0.8fr)
-    minmax(150px, 0.65fr);
+  grid-template-columns: minmax(220px, 1.1fr) minmax(128px, 0.55fr) minmax(190px, 0.8fr);
   gap: 12px;
   align-items: end;
   margin-bottom: 18px;

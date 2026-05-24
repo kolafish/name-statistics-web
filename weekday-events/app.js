@@ -11,7 +11,6 @@ const state = {
   chapter: "all",
   theme: "all",
   query: "",
-  sort: "chapter",
 };
 
 const els = {
@@ -23,7 +22,6 @@ const els = {
   search: document.querySelector("#search-input"),
   chapter: document.querySelector("#chapter-filter"),
   theme: document.querySelector("#theme-filter"),
-  sort: document.querySelector("#sort-select"),
   dayBars: document.querySelector("#day-bars"),
   heatmap: document.querySelector("#chapter-heatmap"),
   resultSummary: document.querySelector("#result-summary"),
@@ -69,15 +67,9 @@ function filteredEvents() {
     return matchesDay && matchesChapter && matchesTheme && matchesQuery;
   });
 
-  return list.sort((a, b) => {
-    if (state.sort === "day") {
-      return dayOrder.indexOf(a.day) - dayOrder.indexOf(b.day) || a.chapter - b.chapter || a.id - b.id;
-    }
-    if (state.sort === "theme") {
-      return a.theme.localeCompare(b.theme, "zh-CN") || a.chapter - b.chapter || a.id - b.id;
-    }
-    return a.chapter - b.chapter || dayOrder.indexOf(a.day) - dayOrder.indexOf(b.day) || a.id - b.id;
-  });
+  return list.sort(
+    (a, b) => a.chapter - b.chapter || dayOrder.indexOf(a.day) - dayOrder.indexOf(b.day) || a.id - b.id,
+  );
 }
 
 function renderControls() {
@@ -269,10 +261,5 @@ els.chapter.addEventListener("change", (event) => {
 
 els.theme.addEventListener("change", (event) => {
   state.theme = event.target.value;
-  render();
-});
-
-els.sort.addEventListener("change", (event) => {
-  state.sort = event.target.value;
   render();
 });
