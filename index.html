@@ -129,28 +129,76 @@
         min-width: 0;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 14px;
+        perspective: 1200px;
       }
 
       a.card {
+        position: relative;
+        isolation: isolate;
         display: grid;
         min-width: 0;
         min-height: 204px;
-        border: 1px solid var(--line);
+        border: 1px solid rgba(255, 255, 255, 0.3);
         border-radius: 8px;
-        background: var(--card);
-        box-shadow: var(--shadow);
+        background:
+          linear-gradient(180deg, rgba(24, 36, 46, 0.84), rgba(6, 13, 20, 0.74)),
+          var(--card);
+        box-shadow:
+          0 34px 82px rgba(0, 0, 0, 0.5),
+          0 14px 30px rgba(0, 0, 0, 0.34),
+          inset 0 1px 0 rgba(255, 255, 255, 0.16);
         padding: 22px;
         color: inherit;
         text-decoration: none;
         backdrop-filter: blur(14px);
+        transform: translateY(0);
+        transition:
+          transform 180ms ease,
+          border-color 180ms ease,
+          background 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      a.card::before {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        border-radius: inherit;
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 34%),
+          radial-gradient(circle at 24% 0%, rgba(126, 224, 199, 0.16), transparent 38%);
+        content: "";
+        opacity: 0.9;
+        pointer-events: none;
+      }
+
+      a.card::after {
+        position: absolute;
+        right: 18px;
+        bottom: -18px;
+        left: 18px;
+        z-index: -2;
+        height: 28px;
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.42);
+        filter: blur(18px);
+        content: "";
+        pointer-events: none;
       }
 
       a.card:hover,
       a.card:focus-visible {
         border-color: rgba(126, 224, 199, 0.76);
         outline: none;
-        background: var(--card-hover);
-        box-shadow: 0 0 0 3px rgba(126, 224, 199, 0.18), var(--shadow);
+        background:
+          linear-gradient(180deg, rgba(29, 48, 58, 0.9), rgba(9, 19, 28, 0.82)),
+          var(--card-hover);
+        box-shadow:
+          0 46px 108px rgba(0, 0, 0, 0.58),
+          0 18px 42px rgba(0, 0, 0, 0.42),
+          0 0 0 3px rgba(126, 224, 199, 0.18),
+          inset 0 1px 0 rgba(255, 255, 255, 0.22);
+        transform: translateY(-8px);
       }
 
       .card-kicker {
