@@ -63,7 +63,8 @@ function matchesBaseFilters(animal) {
   const query = state.query.trim().toLowerCase();
   const categoryMatch = state.category === "all" || animal.category === state.category;
   const animalMatch = state.animal === "all" || animal.id === state.animal;
-  const haystack = `${animal.english} ${animal.zh} ${animal.categoryLabel} ${animal.note} ${animal.terms.join(" ")}`.toLowerCase();
+  const haystack =
+    `${animal.english} ${animal.spanish} ${animal.zh} ${animal.categoryLabel} ${animal.note} ${animal.terms.join(" ")}`.toLowerCase();
   const queryMatch = !query || haystack.includes(query);
   return categoryMatch && animalMatch && queryMatch;
 }
@@ -120,7 +121,7 @@ function renderSelectedFilter() {
   }
   els.selectedFilter.hidden = false;
   els.selectedFilter.innerHTML = `
-    <span>已选动物：<strong>${escapeHtml(animal.zh)}</strong> ${escapeHtml(animal.english)}</span>
+    <span>已选动物：<strong>${escapeHtml(animal.zh)}</strong> ${escapeHtml(animal.english)} · ${escapeHtml(animal.spanish)}</span>
     <button type="button" data-clear-animal>清除</button>
   `;
 }
@@ -199,6 +200,7 @@ function renderHeatmap() {
           <th>
             <span>${escapeHtml(animal.zh)}</span>
             <small>${escapeHtml(animal.english)}</small>
+            <small>${escapeHtml(animal.spanish)}</small>
           </th>
           ${chapters
             .map((chapter) => {
@@ -253,8 +255,10 @@ function renderAnimals(list) {
               <h3>
                 ${escapeHtml(item.zh)}
                 <small>${escapeHtml(item.english)}</small>
+                <small>${escapeHtml(item.spanish)}</small>
               </h3>
               <p>${escapeHtml(item.note)}</p>
+              <div class="spanish-line">西语名：${escapeHtml(item.spanish)}</div>
               <div class="term-line">英文命中：${escapeHtml(item.terms.join(" · "))}</div>
               <div class="chapter-chips" aria-label="${escapeHtml(item.zh)}章节分布">
                 ${renderChapterChips(item)}

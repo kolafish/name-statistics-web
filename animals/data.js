@@ -1,6 +1,6 @@
 window.ANIMAL_STATS_DATA = {
   "source": "One Hundred Years of Solitude.epub",
-  "method": "以本地英文 EPUB 的 20 个章节正文为基础，合并单复数和显著短语；排除了明显非动物语义的命中，例如 bear 作动词、swallow 作动词、Drake 作人名。统计只展示派生数据和中文摘要，不展示原文长段落。",
+  "method": "以本地英文 EPUB 的 20 个章节正文为基础，合并单复数和显著短语；排除了明显非动物语义的命中，例如 bear 作动词、swallow 作动词、Drake 作人名。西语名是按词条对应补充的西语原版常用名，统计仍基于英文 EPUB。统计只展示派生数据和中文摘要，不展示原文长段落。",
   "chapters": [
     1,
     2,
@@ -118,7 +118,8 @@ window.ANIMAL_STATS_DATA = {
         "fish",
         "fishes"
       ],
-      "note": "鱼既以食物和水生动物出现，也反复变成金鱼、糖果鱼等手工或记忆意象。"
+      "note": "鱼既以食物和水生动物出现，也反复变成金鱼、糖果鱼等手工或记忆意象。",
+      "spanish": "pez / pescado"
     },
     {
       "id": "hen_chicken",
@@ -185,7 +186,8 @@ window.ANIMAL_STATS_DATA = {
         "hen",
         "hens"
       ],
-      "note": "母鸡和鸡从早期院落、鸡舍、斗鸡文化延伸到宴席、衰败后的家屋和荒诞传闻。"
+      "note": "母鸡和鸡从早期院落、鸡舍、斗鸡文化延伸到宴席、衰败后的家屋和荒诞传闻。",
+      "spanish": "gallina / pollo"
     },
     {
       "id": "pig_hog",
@@ -260,7 +262,8 @@ window.ANIMAL_STATS_DATA = {
         "pigs",
         "suckling pig"
       ],
-      "note": "猪和猪尾是家族血缘恐惧的重要意象，也出现在炼金材料、食物、牲畜繁殖和抽奖场景里。"
+      "note": "猪和猪尾是家族血缘恐惧的重要意象，也出现在炼金材料、食物、牲畜繁殖和抽奖场景里。",
+      "spanish": "cerdo / puerco"
     },
     {
       "id": "butterfly",
@@ -304,7 +307,8 @@ window.ANIMAL_STATS_DATA = {
         "butterflies",
         "butterfly"
       ],
-      "note": "蝴蝶从干枯标本、工程师捕蝶，到 Mauricio Babilonia 的黄色蝴蝶，成为爱情和灾难的醒目标记。"
+      "note": "蝴蝶从干枯标本、工程师捕蝶，到 Mauricio Babilonia 的黄色蝴蝶，成为爱情和灾难的醒目标记。",
+      "spanish": "mariposa"
     },
     {
       "id": "bird_general",
@@ -368,7 +372,8 @@ window.ANIMAL_STATS_DATA = {
         "bird",
         "birds"
       ],
-      "note": "鸟类泛称贯穿 Macondo 的创村、鸟笼、异常天气和末世景象。"
+      "note": "鸟类泛称贯穿 Macondo 的创村、鸟笼、异常天气和末世景象。",
+      "spanish": "pájaro / ave"
     },
     {
       "id": "horse",
@@ -440,7 +445,8 @@ window.ANIMAL_STATS_DATA = {
         "horse",
         "horses"
       ],
-      "note": "马常与力量、出行、战争、庆典和洪水中的牲畜困境相连。"
+      "note": "马常与力量、出行、战争、庆典和洪水中的牲畜困境相连。",
+      "spanish": "caballo"
     },
     {
       "id": "cock_rooster",
@@ -503,7 +509,8 @@ window.ANIMAL_STATS_DATA = {
         "Roosters",
         "roosters"
       ],
-      "note": "斗鸡引发 Prudencio Aguilar 之死，也在糖果、家禽饲养和神学解释中反复出现。"
+      "note": "斗鸡引发 Prudencio Aguilar 之死，也在糖果、家禽饲养和神学解释中反复出现。",
+      "spanish": "gallo"
     },
     {
       "id": "dog",
@@ -568,7 +575,8 @@ window.ANIMAL_STATS_DATA = {
         "German shepherd dog",
         "hunting dogs"
       ],
-      "note": "狗包括猎犬、追踪犬、广场和妓院里的狗，也常作为警觉、追捕和荒败的动物标记。"
+      "note": "狗包括猎犬、追踪犬、广场和妓院里的狗，也常作为警觉、追捕和荒败的动物标记。",
+      "spanish": "perro"
     },
     {
       "id": "ant",
@@ -610,7 +618,8 @@ window.ANIMAL_STATS_DATA = {
         "flying ants",
         "red ants"
       ],
-      "note": "蚂蚁从 Úrsula 的隐忍劳动到雨后红蚁侵蚀房屋，最终成为家族终结场景的核心动物。"
+      "note": "蚂蚁从 Úrsula 的隐忍劳动到雨后红蚁侵蚀房屋，最终成为家族终结场景的核心动物。",
+      "spanish": "hormiga"
     },
     {
       "id": "cow_cattle",
@@ -659,7 +668,8 @@ window.ANIMAL_STATS_DATA = {
         "cow",
         "cows"
       ],
-      "note": "牛和牲牛多出现在家畜、宴席、繁殖、洪水迁移和贫富变迁中。"
+      "note": "牛和牲牛多出现在家畜、宴席、繁殖、洪水迁移和贫富变迁中。",
+      "spanish": "vaca / ganado"
     },
     {
       "id": "mule",
@@ -707,7 +717,8 @@ window.ANIMAL_STATS_DATA = {
         "mule",
         "mules"
       ],
-      "note": "骡子承担交易、邮件、迁徙和运输功能，是早期 Macondo 与外界联系的实用动物。"
+      "note": "骡子承担交易、邮件、迁徙和运输功能，是早期 Macondo 与外界联系的实用动物。",
+      "spanish": "mula"
     },
     {
       "id": "mosquito",
@@ -759,7 +770,8 @@ window.ANIMAL_STATS_DATA = {
         "mosquito",
         "mosquitoes"
       ],
-      "note": "蚊子常伴随热带夜晚、战争行军、疾病和难以逃避的环境压力。"
+      "note": "蚊子常伴随热带夜晚、战争行军、疾病和难以逃避的环境压力。",
+      "spanish": "mosquito"
     },
     {
       "id": "moth",
@@ -799,7 +811,8 @@ window.ANIMAL_STATS_DATA = {
         "moth",
         "moths"
       ],
-      "note": "蛾与旧书、衣物、婚礼和房屋腐败相连，常提示记忆被侵蚀。"
+      "note": "蛾与旧书、衣物、婚礼和房屋腐败相连，常提示记忆被侵蚀。",
+      "spanish": "polilla"
     },
     {
       "id": "snake",
@@ -843,7 +856,8 @@ window.ANIMAL_STATS_DATA = {
         "snake",
         "snakes"
       ],
-      "note": "蛇连接畸形恐惧、马戏奇观、食物传闻和后期娱乐场所里的异域展示。"
+      "note": "蛇连接畸形恐惧、马戏奇观、食物传闻和后期娱乐场所里的异域展示。",
+      "spanish": "serpiente / culebra"
     },
     {
       "id": "worm",
@@ -893,7 +907,8 @@ window.ANIMAL_STATS_DATA = {
         "worm",
         "worms"
       ],
-      "note": "虫和蚯蚓出现在吃土、腐败、疾病预兆和性爱比喻里。"
+      "note": "虫和蚯蚓出现在吃土、腐败、疾病预兆和性爱比喻里。",
+      "spanish": "gusano / lombriz"
     },
     {
       "id": "rabbit",
@@ -933,7 +948,8 @@ window.ANIMAL_STATS_DATA = {
         "rabbit",
         "rabbits"
       ],
-      "note": "兔子出现在狩猎、厨房盐渍和 Petra Cotes 的动物抽奖与繁殖奇迹中。"
+      "note": "兔子出现在狩猎、厨房盐渍和 Petra Cotes 的动物抽奖与繁殖奇迹中。",
+      "spanish": "conejo"
     },
     {
       "id": "scorpion",
@@ -977,7 +993,8 @@ window.ANIMAL_STATS_DATA = {
         "scorpion",
         "scorpions"
       ],
-      "note": "蝎子是浴室、鞋子和旧宅中反复出现的危险小动物。"
+      "note": "蝎子是浴室、鞋子和旧宅中反复出现的危险小动物。",
+      "spanish": "alacrán / escorpión"
     },
     {
       "id": "insect_general",
@@ -1009,7 +1026,8 @@ window.ANIMAL_STATS_DATA = {
         "insect",
         "insects"
       ],
-      "note": "昆虫泛称集中在丛林、房屋失守和晚期研究中。"
+      "note": "昆虫泛称集中在丛林、房屋失守和晚期研究中。",
+      "spanish": "insecto"
     },
     {
       "id": "dove",
@@ -1054,7 +1072,8 @@ window.ANIMAL_STATS_DATA = {
         "doves",
         "like a dove"
       ],
-      "note": "鸽子既是白屋、笑声和纯净的比喻，也作为被惊飞的真实鸟群出现。"
+      "note": "鸽子既是白屋、笑声和纯净的比喻，也作为被惊飞的真实鸟群出现。",
+      "spanish": "paloma"
     },
     {
       "id": "elephant",
@@ -1083,7 +1102,8 @@ window.ANIMAL_STATS_DATA = {
         "flying elephant",
         "The Elephant"
       ],
-      "note": "大象包括马戏巡游、绰号“The Elephant”和孩子想象中的飞象。"
+      "note": "大象包括马戏巡游、绰号“The Elephant”和孩子想象中的飞象。",
+      "spanish": "elefante"
     },
     {
       "id": "termite",
@@ -1119,7 +1139,8 @@ window.ANIMAL_STATS_DATA = {
         "termite",
         "termites"
       ],
-      "note": "白蚁不断啃噬梁木、旧框和羊皮卷所在的空间，标记房屋物质层面的瓦解。"
+      "note": "白蚁不断啃噬梁木、旧框和羊皮卷所在的空间，标记房屋物质层面的瓦解。",
+      "spanish": "comején / termita"
     },
     {
       "id": "goat",
@@ -1152,7 +1173,8 @@ window.ANIMAL_STATS_DATA = {
         "goat",
         "goats"
       ],
-      "note": "山羊出现在早期交易、院落牲畜、失忆标签和怪物描述中。"
+      "note": "山羊出现在早期交易、院落牲畜、失忆标签和怪物描述中。",
+      "spanish": "cabra"
     },
     {
       "id": "macaw",
@@ -1183,7 +1205,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "macaws"
       ],
-      "note": "金刚鹦鹉是沼泽贸易、远方来客和早期奇观经济的一部分。"
+      "note": "金刚鹦鹉是沼泽贸易、远方来客和早期奇观经济的一部分。",
+      "spanish": "guacamaya"
     },
     {
       "id": "ox",
@@ -1229,7 +1252,8 @@ window.ANIMAL_STATS_DATA = {
         "oxcarts",
         "oxen"
       ],
-      "note": "牛和牛车承担运输、开拓、土地占有和香蕉经济中的道路景象。"
+      "note": "牛和牛车承担运输、开拓、土地占有和香蕉经济中的道路景象。",
+      "spanish": "buey / carreta de bueyes"
     },
     {
       "id": "lizard",
@@ -1269,7 +1293,8 @@ window.ANIMAL_STATS_DATA = {
         "lizard",
         "lizards"
       ],
-      "note": "蜥蜴从原住民食物、旧屋裂缝到雨后儿童恶作剧，带出潮湿和荒废气息。"
+      "note": "蜥蜴从原住民食物、旧屋裂缝到雨后儿童恶作剧，带出潮湿和荒废气息。",
+      "spanish": "lagartija / lagarto"
     },
     {
       "id": "frog_toad",
@@ -1307,7 +1332,8 @@ window.ANIMAL_STATS_DATA = {
         "toad",
         "toads"
       ],
-      "note": "蛙和蟾蜍伴随潮湿、雨灾、丑陋比喻和庭院夜声。"
+      "note": "蛙和蟾蜍伴随潮湿、雨灾、丑陋比喻和庭院夜声。",
+      "spanish": "rana / sapo"
     },
     {
       "id": "iguana",
@@ -1339,7 +1365,8 @@ window.ANIMAL_STATS_DATA = {
         "iguana",
         "iguanas"
       ],
-      "note": "鬣蜥连接家族畸形恐惧、药草医生形象和晚年身体衰败。"
+      "note": "鬣蜥连接家族畸形恐惧、药草医生形象和晚年身体衰败。",
+      "spanish": "iguana"
     },
     {
       "id": "calf_steer",
@@ -1368,7 +1395,8 @@ window.ANIMAL_STATS_DATA = {
         "calves",
         "steer"
       ],
-      "note": "小牛和阉牛出现在强迫服药、抽奖经济和怪物般牲畜的场景里。"
+      "note": "小牛和阉牛出现在强迫服药、抽奖经济和怪物般牲畜的场景里。",
+      "spanish": "ternero / novillo"
     },
     {
       "id": "spider",
@@ -1401,7 +1429,8 @@ window.ANIMAL_STATS_DATA = {
         "spider webs",
         "spiders"
       ],
-      "note": "蜘蛛以蜘蛛卵、蛛网和幼蛛出现，常伴随旧屋、研究和隐秘空间。"
+      "note": "蜘蛛以蜘蛛卵、蛛网和幼蛛出现，常伴随旧屋、研究和隐秘空间。",
+      "spanish": "araña"
     },
     {
       "id": "tiger",
@@ -1436,7 +1465,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "tiger"
       ],
-      "note": "老虎多是装束、爪饰和条纹意象，和战争、狂欢及香蕉餐桌相关。"
+      "note": "老虎多是装束、爪饰和条纹意象，和战争、狂欢及香蕉餐桌相关。",
+      "spanish": "tigre"
     },
     {
       "id": "cockroach",
@@ -1459,7 +1489,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "cockroaches"
       ],
-      "note": "蟑螂在家屋衰败和加泰罗尼亚智者的讨论中成为顽强生存的象征。"
+      "note": "蟑螂在家屋衰败和加泰罗尼亚智者的讨论中成为顽强生存的象征。",
+      "spanish": "cucaracha"
     },
     {
       "id": "canary",
@@ -1487,7 +1518,8 @@ window.ANIMAL_STATS_DATA = {
         "canaries",
         "canary"
       ],
-      "note": "金丝雀从创村鸟群延伸到 Amaranta Úrsula 抵达 Macondo 时的鸟笼。"
+      "note": "金丝雀从创村鸟群延伸到 Amaranta Úrsula 抵达 Macondo 时的鸟笼。",
+      "spanish": "canario"
     },
     {
       "id": "donkey",
@@ -1519,7 +1551,8 @@ window.ANIMAL_STATS_DATA = {
         "donkey",
         "donkeys"
       ],
-      "note": "驴既是笨拙生活的比喻，也承担人物骑乘和粗俗传闻中的动物角色。"
+      "note": "驴既是笨拙生活的比喻，也承担人物骑乘和粗俗传闻中的动物角色。",
+      "spanish": "burro"
     },
     {
       "id": "monkey",
@@ -1551,7 +1584,8 @@ window.ANIMAL_STATS_DATA = {
         "monkey",
         "monkeys"
       ],
-      "note": "猴子出现在吉普赛奇观、密林食物和玩具机械动物里。"
+      "note": "猴子出现在吉普赛奇观、密林食物和玩具机械动物里。",
+      "spanish": "mono"
     },
     {
       "id": "snail",
@@ -1587,7 +1621,8 @@ window.ANIMAL_STATS_DATA = {
         "snail",
         "snails"
       ],
-      "note": "蜗牛和蜗牛壳出现在吃土、身体蜷缩、雨灾和性爱教学的比喻里。"
+      "note": "蜗牛和蜗牛壳出现在吃土、身体蜷缩、雨灾和性爱教学的比喻里。",
+      "spanish": "caracol"
     },
     {
       "id": "turtle_tortoise",
@@ -1620,7 +1655,8 @@ window.ANIMAL_STATS_DATA = {
         "turtle",
         "turtles"
       ],
-      "note": "龟既是体态比喻，也在招待陌生人和妓院奇观中作为真实动物出现。"
+      "note": "龟既是体态比喻，也在招待陌生人和妓院奇观中作为真实动物出现。",
+      "spanish": "tortuga"
     },
     {
       "id": "lice",
@@ -1649,7 +1685,8 @@ window.ANIMAL_STATS_DATA = {
         "nit",
         "nits"
       ],
-      "note": "虱子和虮子出现在照护、贫困和儿童整理身体的细节里。"
+      "note": "虱子和虮子出现在照护、贫困和儿童整理身体的细节里。",
+      "spanish": "piojos / liendres"
     },
     {
       "id": "shellfish",
@@ -1676,7 +1713,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "shellfish"
       ],
-      "note": "贝类既是气味和食物，也作为身体动作的比喻。"
+      "note": "贝类既是气味和食物，也作为身体动作的比喻。",
+      "spanish": "mariscos"
     },
     {
       "id": "bee",
@@ -1701,7 +1739,8 @@ window.ANIMAL_STATS_DATA = {
         "beeswax",
         "queen bee"
       ],
-      "note": "蜂和蜂蜡连接鸟类、感官阻隔和 Remedios the Beauty 的蜂后式命运。"
+      "note": "蜂和蜂蜡连接鸟类、感官阻隔和 Remedios the Beauty 的蜂后式命运。",
+      "spanish": "abeja"
     },
     {
       "id": "crocodile",
@@ -1725,7 +1764,8 @@ window.ANIMAL_STATS_DATA = {
         "crocodile",
         "crocodiles"
       ],
-      "note": "鳄鱼从 Francis Drake 的传闻到妓院奇观和朋友们的怪诞故事中出现。"
+      "note": "鳄鱼从 Francis Drake 的传闻到妓院奇观和朋友们的怪诞故事中出现。",
+      "spanish": "caimán / cocodrilo"
     },
     {
       "id": "deer",
@@ -1748,7 +1788,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "deer"
       ],
-      "note": "鹿出现在北方探险和猎人归来场景里。"
+      "note": "鹿出现在北方探险和猎人归来场景里。",
+      "spanish": "venado"
     },
     {
       "id": "jaguar",
@@ -1776,7 +1817,8 @@ window.ANIMAL_STATS_DATA = {
         "jaguars",
         "tame jaguar"
       ],
-      "note": "美洲豹连接创村前的狩猎能力、洪水中牲畜威胁和末期离开 Macondo 的驯豹。"
+      "note": "美洲豹连接创村前的狩猎能力、洪水中牲畜威胁和末期离开 Macondo 的驯豹。",
+      "spanish": "jaguar"
     },
     {
       "id": "lark",
@@ -1805,7 +1847,8 @@ window.ANIMAL_STATS_DATA = {
         "larks",
         "larks’ livers"
       ],
-      "note": "云雀出现在梦的时间标记、奢侈餐桌和欧洲春天记忆里。"
+      "note": "云雀出现在梦的时间标记、奢侈餐桌和欧洲春天记忆里。",
+      "spanish": "alondra"
     },
     {
       "id": "cricket",
@@ -1833,7 +1876,8 @@ window.ANIMAL_STATS_DATA = {
         "cricket",
         "crickets"
       ],
-      "note": "蟋蟀是发烧夜晚、雨中清晨和死亡比喻里的声音或小动物。"
+      "note": "蟋蟀是发烧夜晚、雨中清晨和死亡比喻里的声音或小动物。",
+      "spanish": "grillo"
     },
     {
       "id": "peacock",
@@ -1861,7 +1905,8 @@ window.ANIMAL_STATS_DATA = {
         "peacock",
         "peacocks"
       ],
-      "note": "孔雀出现于刺绣、美国人社区草坪和家族贵族记忆里。"
+      "note": "孔雀出现于刺绣、美国人社区草坪和家族贵族记忆里。",
+      "spanish": "pavo real"
     },
     {
       "id": "bat",
@@ -1890,7 +1935,8 @@ window.ANIMAL_STATS_DATA = {
         "good bat",
         "like an enormous bat"
       ],
-      "note": "蝙蝠出现在钟楼传闻、马车外形和恋爱调笑中。"
+      "note": "蝙蝠出现在钟楼传闻、马车外形和恋爱调笑中。",
+      "spanish": "murciélago"
     },
     {
       "id": "mare",
@@ -1919,7 +1965,8 @@ window.ANIMAL_STATS_DATA = {
         "mare",
         "mares"
       ],
-      "note": "母马既是牲畜繁殖奇迹的一环，也作为身体比喻出现。"
+      "note": "母马既是牲畜繁殖奇迹的一环，也作为身体比喻出现。",
+      "spanish": "yegua"
     },
     {
       "id": "crab",
@@ -1943,7 +1990,8 @@ window.ANIMAL_STATS_DATA = {
         "claws of a crab",
         "crabs"
       ],
-      "note": "蟹多作为痛苦、疾病和身体动作的比喻出现。"
+      "note": "蟹多作为痛苦、疾病和身体动作的比喻出现。",
+      "spanish": "cangrejo"
     },
     {
       "id": "rat",
@@ -1970,7 +2018,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "rats"
       ],
-      "note": "老鼠在晚期房屋和 Úrsula 被孩子恶作剧隐藏时出现，强化荒废感。"
+      "note": "老鼠在晚期房屋和 Úrsula 被孩子恶作剧隐藏时出现，强化荒废感。",
+      "spanish": "rata"
     },
     {
       "id": "parrot",
@@ -1994,7 +2043,8 @@ window.ANIMAL_STATS_DATA = {
         "parrot",
         "parrots"
       ],
-      "note": "鹦鹉出现在吉普赛奇观和厨房暴力玩笑中。"
+      "note": "鹦鹉出现在吉普赛奇观和厨房暴力玩笑中。",
+      "spanish": "loro / papagayo"
     },
     {
       "id": "raven",
@@ -2018,7 +2068,8 @@ window.ANIMAL_STATS_DATA = {
         "raven",
         "raven’s"
       ],
-      "note": "渡鸦主要是 Melquíades 帽子的阴影比喻。"
+      "note": "渡鸦主要是 Melquíades 帽子的阴影比喻。",
+      "spanish": "cuervo"
     },
     {
       "id": "redbreast",
@@ -2041,7 +2092,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "redbreasts"
       ],
-      "note": "知更鸟从创村鸟群延伸到 Rebeca 新家的杏仁树鸟巢。"
+      "note": "知更鸟从创村鸟群延伸到 Rebeca 新家的杏仁树鸟巢。",
+      "spanish": "petirrojo"
     },
     {
       "id": "sparrow",
@@ -2064,7 +2116,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "sparrow hands"
       ],
-      "note": "麻雀作为 Melquíades 手部形象的细小比喻反复出现。"
+      "note": "麻雀作为 Melquíades 手部形象的细小比喻反复出现。",
+      "spanish": "gorrión"
     },
     {
       "id": "vulture",
@@ -2088,7 +2141,8 @@ window.ANIMAL_STATS_DATA = {
         "vulture",
         "vultures"
       ],
-      "note": "秃鹫出现在尸体和垃圾场景中，带出死亡和腐败的气息。"
+      "note": "秃鹫出现在尸体和垃圾场景中，带出死亡和腐败的气息。",
+      "spanish": "buitre"
     },
     {
       "id": "curlew",
@@ -2111,7 +2165,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "curlews"
       ],
-      "note": "杓鹬的叫声和时间感伴随夜晚与离乡记忆。"
+      "note": "杓鹬的叫声和时间感伴随夜晚与离乡记忆。",
+      "spanish": "zarapito"
     },
     {
       "id": "whale",
@@ -2131,7 +2186,8 @@ window.ANIMAL_STATS_DATA = {
         "whale",
         "whales"
       ],
-      "note": "鲸与儿童阅读的奇幻故事和约拿式联想相关。"
+      "note": "鲸与儿童阅读的奇幻故事和约拿式联想相关。",
+      "spanish": "ballena"
     },
     {
       "id": "bittern",
@@ -2150,7 +2206,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "bitterns"
       ],
-      "note": "麻鳽在 The Golden Child 的奇观空间里成群出现。"
+      "note": "麻鳽在 The Golden Child 的奇观空间里成群出现。",
+      "spanish": "avetoro"
     },
     {
       "id": "cetacean",
@@ -2169,7 +2226,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "cetaceans"
       ],
-      "note": "鲸类出现在 José Arcadio Buendía 对西方海域的神话化想象里。"
+      "note": "鲸类出现在 José Arcadio Buendía 对西方海域的神话化想象里。",
+      "spanish": "cetáceo"
     },
     {
       "id": "salamander",
@@ -2188,7 +2246,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "salamanders"
       ],
-      "note": "蝾螈出现在早期丛林探险的潮湿、血色景观里。"
+      "note": "蝾螈出现在早期丛林探险的潮湿、血色景观里。",
+      "spanish": "salamandra"
     },
     {
       "id": "squid",
@@ -2207,7 +2266,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "squids"
       ],
-      "note": "鱿鱼出现在 Melquíades 尸体被海中吞食的传闻里。"
+      "note": "鱿鱼出现在 Melquíades 尸体被海中吞食的传闻里。",
+      "spanish": "calamar"
     },
     {
       "id": "troupial",
@@ -2226,7 +2286,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "troupials"
       ],
-      "note": "拟鹂是 José Arcadio Buendía 创村时养满村子的鸟之一。"
+      "note": "拟鹂是 José Arcadio Buendía 创村时养满村子的鸟之一。",
+      "spanish": "turpial"
     },
     {
       "id": "pony",
@@ -2245,7 +2306,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "ponies"
       ],
-      "note": "小马作为失眠症时期糖果动物的一种出现。"
+      "note": "小马作为失眠症时期糖果动物的一种出现。",
+      "spanish": "poni"
     },
     {
       "id": "duck",
@@ -2264,7 +2326,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "wild ducks"
       ],
-      "note": "野鸭出现在猎人肩上的猎物串中。"
+      "note": "野鸭出现在猎人肩上的猎物串中。",
+      "spanish": "pato"
     },
     {
       "id": "armadillo",
@@ -2283,7 +2346,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "armadillos"
       ],
-      "note": "犰狳出现在 Aureliano José 对猪尾恐惧的反驳中。"
+      "note": "犰狳出现在 Aureliano José 对猪尾恐惧的反驳中。",
+      "spanish": "armadillo"
     },
     {
       "id": "vermin",
@@ -2302,7 +2366,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "vermin"
       ],
-      "note": "害虫泛称出现在荒废房屋裂缝里的生物群落。"
+      "note": "害虫泛称出现在荒废房屋裂缝里的生物群落。",
+      "spanish": "alimañas"
     },
     {
       "id": "beetle",
@@ -2321,7 +2386,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "beetles"
       ],
-      "note": "甲虫和大丽花一起构成 Remedios the Beauty 升天前被抛下的环境。"
+      "note": "甲虫和大丽花一起构成 Remedios the Beauty 升天前被抛下的环境。",
+      "spanish": "escarabajo"
     },
     {
       "id": "quail",
@@ -2340,7 +2406,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "quails"
       ],
-      "note": "鹌鹑出现在美国人社区的蓝色草坪上。"
+      "note": "鹌鹑出现在美国人社区的蓝色草坪上。",
+      "spanish": "codorniz"
     },
     {
       "id": "swallow",
@@ -2359,7 +2426,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "roasted swallows"
       ],
-      "note": "燕子被电网烤焦，揭示美国人社区的隔离设施。"
+      "note": "燕子被电网烤焦，揭示美国人社区的隔离设施。",
+      "spanish": "golondrina"
     },
     {
       "id": "bear",
@@ -2378,7 +2446,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "a bear dressed"
       ],
-      "note": "熊在马戏巡游里穿着荷兰女孩服装出现。"
+      "note": "熊在马戏巡游里穿着荷兰女孩服装出现。",
+      "spanish": "oso"
     },
     {
       "id": "dromedary",
@@ -2397,7 +2466,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "dromedary"
       ],
-      "note": "单峰驼在马戏巡游中短暂出现。"
+      "note": "单峰驼在马戏巡游中短暂出现。",
+      "spanish": "dromedario"
     },
     {
       "id": "centipede",
@@ -2416,7 +2486,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "centipede"
       ],
-      "note": "蜈蚣作为餐桌刀叉数量的夸张比喻出现。"
+      "note": "蜈蚣作为餐桌刀叉数量的夸张比喻出现。",
+      "spanish": "ciempiés"
     },
     {
       "id": "shrimp",
@@ -2435,7 +2506,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "shrimp"
       ],
-      "note": "虾作为身体蜷缩的比喻出现在晚期死亡场景中。"
+      "note": "虾作为身体蜷缩的比喻出现在晚期死亡场景中。",
+      "spanish": "camarón"
     },
     {
       "id": "starfish",
@@ -2454,7 +2526,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "starfish"
       ],
-      "note": "海星作为豆子落地形状的几何比喻出现。"
+      "note": "海星作为豆子落地形状的几何比喻出现。",
+      "spanish": "estrella de mar"
     },
     {
       "id": "dolphin",
@@ -2473,7 +2546,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "dolphin"
       ],
-      "note": "海豚作为身体沉入水中的苍白比喻出现。"
+      "note": "海豚作为身体沉入水中的苍白比喻出现。",
+      "spanish": "delfín"
     },
     {
       "id": "heron",
@@ -2492,7 +2566,8 @@ window.ANIMAL_STATS_DATA = {
       "terms": [
         "herons"
       ],
-      "note": "鹭在 The Golden Child 的围栏奇观中出现。"
+      "note": "鹭在 The Golden Child 的围栏奇观中出现。",
+      "spanish": "garza"
     }
   ]
 };

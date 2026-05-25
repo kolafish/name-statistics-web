@@ -1,6 +1,6 @@
 window.PLANT_STATS_DATA = {
   "source": "One Hundred Years of Solitude.epub",
-  "method": "以本地英文 EPUB 的 20 个章节正文为基础，合并单复数和显著短语；排除了明显非植物语义的命中，例如 rose 作动词、orange 作颜色。统计只展示派生数据和中文摘要，不展示原文长段落。",
+  "method": "以本地英文 EPUB 的 20 个章节正文为基础，合并单复数和显著短语；排除了明显非植物语义的命中，例如 rose 作动词、orange 作颜色。西语名是按词条对应补充的西语原版常用名，统计仍基于英文 EPUB。统计只展示派生数据和中文摘要，不展示原文长段落。",
   "chapters": [
     1,
     2,
@@ -102,7 +102,8 @@ window.PLANT_STATS_DATA = {
         "banana",
         "bananas"
       ],
-      "note": "从早期菜园里的香蕉到香蕉公司、香蕉林、香蕉港、工人罢工与大雨后的荒败，是后半部历史和外来资本的核心植物线索。"
+      "note": "从早期菜园里的香蕉到香蕉公司、香蕉林、香蕉港、工人罢工与大雨后的荒败，是后半部历史和外来资本的核心植物线索。",
+      "spanish": "banano / plátano"
     },
     {
       "id": "coffee",
@@ -173,7 +174,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "coffee"
       ],
-      "note": "多出现在家中饮食、守夜、日常照料和晚年孤独场景，像布恩迪亚家日常时间的固定饮品。"
+      "note": "多出现在家中饮食、守夜、日常照料和晚年孤独场景，像布恩迪亚家日常时间的固定饮品。",
+      "spanish": "café"
     },
     {
       "id": "chestnut",
@@ -232,7 +234,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "chestnut"
       ],
-      "note": "庭院里的栗树是 José Arcadio Buendía 被绑缚、被照料、死亡以及后代回望家族开端的地点。"
+      "note": "庭院里的栗树是 José Arcadio Buendía 被绑缚、被照料、死亡以及后代回望家族开端的地点。",
+      "spanish": "castaño"
     },
     {
       "id": "rose",
@@ -303,7 +306,8 @@ window.PLANT_STATS_DATA = {
         "solitary rose",
         "yellow rose"
       ],
-      "note": "玫瑰既是求爱、婚礼和回忆中的花，也反复出现在花丛、香水、玫瑰水和衰败后的玫瑰丛里。"
+      "note": "玫瑰既是求爱、婚礼和回忆中的花，也反复出现在花丛、香水、玫瑰水和衰败后的玫瑰丛里。",
+      "spanish": "rosa"
     },
     {
       "id": "begonia",
@@ -367,7 +371,8 @@ window.PLANT_STATS_DATA = {
         "begonia",
         "begonias"
       ],
-      "note": "秋海棠是家中走廊盆栽和女性生活空间的重要装饰，后来随房屋兴衰反复被毁坏又重种。"
+      "note": "秋海棠是家中走廊盆栽和女性生活空间的重要装饰，后来随房屋兴衰反复被毁坏又重种。",
+      "spanish": "begonia"
     },
     {
       "id": "almond",
@@ -418,7 +423,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "almond"
       ],
-      "note": "杏仁树被种在街道上，成为 Macondo 最老街道、广场和夜色的标记，也见证城市衰老。"
+      "note": "杏仁树被种在街道上，成为 Macondo 最老街道、广场和夜色的标记，也见证城市衰老。",
+      "spanish": "almendro"
     },
     {
       "id": "palm",
@@ -462,7 +468,8 @@ window.PLANT_STATS_DATA = {
         "palm shelter",
         "palm trees"
       ],
-      "note": "棕榈出现在屋顶、树、油、枝叶和 José Arcadio Buendía 的遮棚里，连接热带环境与家族庭院。"
+      "note": "棕榈出现在屋顶、树、油、枝叶和 José Arcadio Buendía 的遮棚里，连接热带环境与家族庭院。",
+      "spanish": "palma / palmera"
     },
     {
       "id": "oregano",
@@ -501,7 +508,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "oregano"
       ],
-      "note": "牛至盆栽和气味出现在走廊、爱情记忆、暴怒破坏以及房屋重建中。"
+      "note": "牛至盆栽和气味出现在走廊、爱情记忆、暴怒破坏以及房屋重建中。",
+      "spanish": "orégano"
     },
     {
       "id": "gourd",
@@ -537,7 +545,8 @@ window.PLANT_STATS_DATA = {
         "gourd",
         "gourds"
       ],
-      "note": "葫芦作为容器、食器或比喻出现，连接早期炼金、洗浴、宴席和家庭储藏。"
+      "note": "葫芦作为容器、食器或比喻出现，连接早期炼金、洗浴、宴席和家庭储藏。",
+      "spanish": "calabazo / calabaza"
     },
     {
       "id": "orange",
@@ -581,7 +590,8 @@ window.PLANT_STATS_DATA = {
         "oranges",
         "wild orange trees"
       ],
-      "note": "橙树、橙汁、橙花和橙子制品集中在早期探索、Rebeca 的偏食治疗、婚礼和宴饮中。"
+      "note": "橙树、橙汁、橙花和橙子制品集中在早期探索、Rebeca 的偏食治疗、婚礼和宴饮中。",
+      "spanish": "naranjo / naranja"
     },
     {
       "id": "cotton",
@@ -620,7 +630,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "cotton"
       ],
-      "note": "多为棉花、棉布、药棉或衣物材料，指向治疗、身体和家居用品。"
+      "note": "多为棉花、棉布、药棉或衣物材料，指向治疗、身体和家居用品。",
+      "spanish": "algodón"
     },
     {
       "id": "grass",
@@ -658,7 +669,8 @@ window.PLANT_STATS_DATA = {
         "rye grass",
         "wild grass"
       ],
-      "note": "草、针茅草和黑麦草多出现在死亡、荒败、旧宅和外部景观中。"
+      "note": "草、针茅草和黑麦草多出现在死亡、荒败、旧宅和外部景观中。",
+      "spanish": "hierba / pasto"
     },
     {
       "id": "rice",
@@ -693,7 +705,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "rice"
       ],
-      "note": "米饭是宴饮、饥荒补给和晚期简朴饮食的一部分。"
+      "note": "米饭是宴饮、饥荒补给和晚期简朴饮食的一部分。",
+      "spanish": "arroz"
     },
     {
       "id": "weeds",
@@ -728,7 +741,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "weeds"
       ],
-      "note": "杂草在雨灾后和家屋衰败时突破地面、侵入房间，标记秩序崩塌。"
+      "note": "杂草在雨灾后和家屋衰败时突破地面、侵入房间，标记秩序崩塌。",
+      "spanish": "maleza"
     },
     {
       "id": "fern",
@@ -767,7 +781,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "ferns"
       ],
-      "note": "蕨类主要作为家中走廊盆栽，也出现在发现西班牙帆船的潮湿植物景观里。"
+      "note": "蕨类主要作为家中走廊盆栽，也出现在发现西班牙帆船的潮湿植物景观里。",
+      "spanish": "helecho"
     },
     {
       "id": "lavender",
@@ -802,7 +817,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "lavender"
       ],
-      "note": "薰衣草以香气和薰衣草水出现，常和 Pietro Crespi、礼节性探访与旧式体面联系在一起。"
+      "note": "薰衣草以香气和薰衣草水出现，常和 Pietro Crespi、礼节性探访与旧式体面联系在一起。",
+      "spanish": "lavanda"
     },
     {
       "id": "cocoa_chocolate",
@@ -830,7 +846,8 @@ window.PLANT_STATS_DATA = {
         "chocolate",
         "cocoa"
       ],
-      "note": "可可和巧克力多以饮品、调味或身体护理材料出现，属于植物制品线索。"
+      "note": "可可和巧克力多以饮品、调味或身体护理材料出现，属于植物制品线索。",
+      "spanish": "cacao / chocolate"
     },
     {
       "id": "lily",
@@ -863,7 +880,8 @@ window.PLANT_STATS_DATA = {
         "lily",
         "lily-colored"
       ],
-      "note": "百合既有丛林中的花，也作为肤色和纯洁感的比喻出现。"
+      "note": "百合既有丛林中的花，也作为肤色和纯洁感的比喻出现。",
+      "spanish": "lirio / azucena"
     },
     {
       "id": "moss",
@@ -898,7 +916,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "moss"
       ],
-      "note": "苔藓出现在沉船、身体、潮湿衣物和荒废空间中，强化腐朽湿气。"
+      "note": "苔藓出现在沉船、身体、潮湿衣物和荒废空间中，强化腐朽湿气。",
+      "spanish": "musgo"
     },
     {
       "id": "cane",
@@ -934,7 +953,8 @@ window.PLANT_STATS_DATA = {
         "cane liquor",
         "fermented cane juice"
       ],
-      "note": "甘蔗汁和甘蔗酒出现在集会、酒馆和宴饮里。"
+      "note": "甘蔗汁和甘蔗酒出现在集会、酒馆和宴饮里。",
+      "spanish": "caña"
     },
     {
       "id": "corn",
@@ -961,7 +981,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "corn"
       ],
-      "note": "玉米作为粮食、仓储、饲料和困境补给出现。"
+      "note": "玉米作为粮食、仓储、饲料和困境补给出现。",
+      "spanish": "maíz"
     },
     {
       "id": "mustard",
@@ -988,7 +1009,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "mustard"
       ],
-      "note": "芥末主要以芥末膏、蒸汽等民间疗法形式出现。"
+      "note": "芥末主要以芥末膏、蒸汽等民间疗法形式出现。",
+      "spanish": "mostaza"
     },
     {
       "id": "cassava",
@@ -1015,7 +1037,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "cassava"
       ],
-      "note": "木薯是早期菜园作物、失忆标签和宴饮食物。"
+      "note": "木薯是早期菜园作物、失忆标签和宴饮食物。",
+      "spanish": "yuca"
     },
     {
       "id": "castor",
@@ -1042,7 +1065,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "castor oil"
       ],
-      "note": "蓖麻油用于炼金、给孩子通便和照护病痛。"
+      "note": "蓖麻油用于炼金、给孩子通便和照护病痛。",
+      "spanish": "ricino / higuerilla"
     },
     {
       "id": "straw",
@@ -1069,7 +1093,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "straw"
       ],
-      "note": "稻草和草编物出现在填充、帽子和人物装束中。"
+      "note": "稻草和草编物出现在填充、帽子和人物装束中。",
+      "spanish": "paja"
     },
     {
       "id": "guava",
@@ -1096,7 +1121,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "guava"
       ],
-      "note": "番石榴以果冻、甜点和爱情记忆中的番石榴林出现。"
+      "note": "番石榴以果冻、甜点和爱情记忆中的番石榴林出现。",
+      "spanish": "guayaba"
     },
     {
       "id": "rhubarb",
@@ -1119,7 +1145,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "rhubarb"
       ],
-      "note": "大黄与橙汁搭配，作为 Rebeca 吃土癖的治疗和诱发记忆的味道出现。"
+      "note": "大黄与橙汁搭配，作为 Rebeca 吃土癖的治疗和诱发记忆的味道出现。",
+      "spanish": "ruibarbo"
     },
     {
       "id": "bean_chickpea",
@@ -1143,7 +1170,8 @@ window.PLANT_STATS_DATA = {
         "beans",
         "chick peas"
       ],
-      "note": "豆类在晚期自然错乱和加泰罗尼亚智者的日常料理里出现。"
+      "note": "豆类在晚期自然错乱和加泰罗尼亚智者的日常料理里出现。",
+      "spanish": "frijoles / garbanzos"
     },
     {
       "id": "basil",
@@ -1166,7 +1194,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "basil"
       ],
-      "note": "罗勒出现在早期箱柜气味和后期粗俗玩笑中。"
+      "note": "罗勒出现在早期箱柜气味和后期粗俗玩笑中。",
+      "spanish": "albahaca"
     },
     {
       "id": "caladium",
@@ -1189,7 +1218,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "caladium"
       ],
-      "note": "花叶芋是早期菜园作物和失忆标签的一部分。"
+      "note": "花叶芋是早期菜园作物和失忆标签的一部分。",
+      "spanish": "caladio"
     },
     {
       "id": "eggplant",
@@ -1213,7 +1243,8 @@ window.PLANT_STATS_DATA = {
         "eggplant",
         "eggplants"
       ],
-      "note": "茄子出现在早期菜园，并成为 Amaranta 晚年回忆的意象。"
+      "note": "茄子出现在早期菜园，并成为 Amaranta 晚年回忆的意象。",
+      "spanish": "berenjena"
     },
     {
       "id": "hay",
@@ -1236,7 +1267,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "hay"
       ],
-      "note": "干草用于放大镜点火实验，也在雨灾后的饲料匮乏中出现。"
+      "note": "干草用于放大镜点火实验，也在雨灾后的饲料匮乏中出现。",
+      "spanish": "heno"
     },
     {
       "id": "poppy",
@@ -1260,7 +1292,8 @@ window.PLANT_STATS_DATA = {
         "poppies",
         "poppy-laden"
       ],
-      "note": "罂粟田和罂粟平原与西班牙帆船的旧记忆、火车旅程相连。"
+      "note": "罂粟田和罂粟平原与西班牙帆船的旧记忆、火车旅程相连。",
+      "spanish": "amapola"
     },
     {
       "id": "radish",
@@ -1284,7 +1317,8 @@ window.PLANT_STATS_DATA = {
         "radish oil",
         "radish syrup"
       ],
-      "note": "萝卜油和萝卜糖浆出现在炼金替代材料和病痛照料里。"
+      "note": "萝卜油和萝卜糖浆出现在炼金替代材料和病痛照料里。",
+      "spanish": "rábano"
     },
     {
       "id": "yam",
@@ -1307,7 +1341,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "yams"
       ],
-      "note": "山药是早期菜园作物和宴饮配菜。"
+      "note": "山药是早期菜园作物和宴饮配菜。",
+      "spanish": "ñame"
     },
     {
       "id": "chili",
@@ -1330,7 +1365,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "hot chili"
       ],
-      "note": "辣椒用于惩戒和学校管教。"
+      "note": "辣椒用于惩戒和学校管教。",
+      "spanish": "ají / chile"
     },
     {
       "id": "laurel",
@@ -1354,7 +1390,8 @@ window.PLANT_STATS_DATA = {
         "laurel leaves",
         "laurel tree"
       ],
-      "note": "月桂树和月桂叶出现在梦的时间标记和处理尸体气味的荒诞设想中。"
+      "note": "月桂树和月桂叶出现在梦的时间标记和处理尸体气味的荒诞设想中。",
+      "spanish": "laurel"
     },
     {
       "id": "gardenia",
@@ -1377,7 +1414,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "gardenia"
       ],
-      "note": "栀子花与 Pietro Crespi 的求爱礼节和 Amaranta 的回忆相关。"
+      "note": "栀子花与 Pietro Crespi 的求爱礼节和 Amaranta 的回忆相关。",
+      "spanish": "gardenia"
     },
     {
       "id": "willow",
@@ -1401,7 +1439,8 @@ window.PLANT_STATS_DATA = {
         "willow",
         "willows"
       ],
-      "note": "柳树和柳木出现在宫廷般的墓园想象和人物手杖中。"
+      "note": "柳树和柳木出现在宫廷般的墓园想象和人物手杖中。",
+      "spanish": "sauce"
     },
     {
       "id": "onion",
@@ -1425,7 +1464,8 @@ window.PLANT_STATS_DATA = {
         "onion",
         "onions"
       ],
-      "note": "洋葱既是饭食配料，也作为机枪扫射般层层剥离的比喻。"
+      "note": "洋葱既是饭食配料，也作为机枪扫射般层层剥离的比喻。",
+      "spanish": "cebolla"
     },
     {
       "id": "camellia",
@@ -1448,7 +1488,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "camellias"
       ],
-      "note": "亚马逊山茶花出现在 Pilar Ternera 的妓院舞场与葬礼坑旁。"
+      "note": "亚马逊山茶花出现在 Pilar Ternera 的妓院舞场与葬礼坑旁。",
+      "spanish": "camelia"
     },
     {
       "id": "ahuyama",
@@ -1467,7 +1508,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "ahuyama"
       ],
-      "note": "南瓜类根茎作物出现在创村早期的家庭菜园里。"
+      "note": "南瓜类根茎作物出现在创村早期的家庭菜园里。",
+      "spanish": "ahuyama"
     },
     {
       "id": "orchid",
@@ -1486,7 +1528,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "orchids"
       ],
-      "note": "兰花装饰被丛林吞没的西班牙帆船索具。"
+      "note": "兰花装饰被丛林吞没的西班牙帆船索具。",
+      "spanish": "orquídea"
     },
     {
       "id": "arnica",
@@ -1505,7 +1548,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "arnica"
       ],
-      "note": "山金车作为外伤敷料出现。"
+      "note": "山金车作为外伤敷料出现。",
+      "spanish": "árnica"
     },
     {
       "id": "tobacco",
@@ -1524,7 +1568,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "tobacco"
       ],
-      "note": "烟草种植者出现在 Úrsula 家族迁徙前的记忆里。"
+      "note": "烟草种植者出现在 Úrsula 家族迁徙前的记忆里。",
+      "spanish": "tabaco"
     },
     {
       "id": "acacia",
@@ -1543,7 +1588,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "acacias"
       ],
-      "note": "金合欢作为原本可被种在街道上的树种，被杏仁树取代。"
+      "note": "金合欢作为原本可被种在街道上的树种，被杏仁树取代。",
+      "spanish": "acacia"
     },
     {
       "id": "balsa",
@@ -1562,7 +1608,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "balsa wood"
       ],
-      "note": "巴尔沙木作为串起糖果动物的小木棍出现。"
+      "note": "巴尔沙木作为串起糖果动物的小木棍出现。",
+      "spanish": "balso / balsa"
     },
     {
       "id": "monkshood",
@@ -1581,7 +1628,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "monkshood"
       ],
-      "note": "乌头被 Úrsula 用作失眠症的药草汤。"
+      "note": "乌头被 Úrsula 用作失眠症的药草汤。",
+      "spanish": "acónito"
     },
     {
       "id": "cumin",
@@ -1600,7 +1648,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "cumin seeds"
       ],
-      "note": "孜然籽与胡椒和月桂叶一起构成处理尸体的荒诞调味设想。"
+      "note": "孜然籽与胡椒和月桂叶一起构成处理尸体的荒诞调味设想。",
+      "spanish": "comino"
     },
     {
       "id": "pepper",
@@ -1619,7 +1668,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "pepper"
       ],
-      "note": "胡椒与孜然、月桂一起出现在处理尸体气味的荒诞设想里。"
+      "note": "胡椒与孜然、月桂一起出现在处理尸体气味的荒诞设想里。",
+      "spanish": "pimienta"
     },
     {
       "id": "rosemary",
@@ -1638,7 +1688,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "rosemary"
       ],
-      "note": "迷迭香叶撒在床上，和 Aureliano José 的约会与死亡擦肩而过。"
+      "note": "迷迭香叶撒在床上，和 Aureliano José 的约会与死亡擦肩而过。",
+      "spanish": "romero"
     },
     {
       "id": "ceiba",
@@ -1657,7 +1708,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "ceiba tree"
       ],
-      "note": "木棉/赛巴树是 Neerlandia 停战仪式的树荫地标。"
+      "note": "木棉/赛巴树是 Neerlandia 停战仪式的树荫地标。",
+      "spanish": "ceiba"
     },
     {
       "id": "aloe",
@@ -1676,7 +1728,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "aloe"
       ],
-      "note": "芦荟枝与创村时期门上的护佑物一同出现。"
+      "note": "芦荟枝与创村时期门上的护佑物一同出现。",
+      "spanish": "sábila / aloe"
     },
     {
       "id": "cypress",
@@ -1695,7 +1748,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "cypresses"
       ],
-      "note": "柏树在 Fernanda 童年宅院中制造冷清、墓地般的气氛。"
+      "note": "柏树在 Fernanda 童年宅院中制造冷清、墓地般的气氛。",
+      "spanish": "ciprés"
     },
     {
       "id": "dahlia",
@@ -1714,7 +1768,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "dahlias"
       ],
-      "note": "大丽花在 Remedios the Beauty 升天时与甲虫环境一起被抛下。"
+      "note": "大丽花在 Remedios the Beauty 升天时与甲虫环境一起被抛下。",
+      "spanish": "dalia"
     },
     {
       "id": "flax",
@@ -1733,7 +1788,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "flax"
       ],
-      "note": "亚麻是 Amaranta 亲自纺线、拖延寿衣制作时间的材料。"
+      "note": "亚麻是 Amaranta 亲自纺线、拖延寿衣制作时间的材料。",
+      "spanish": "lino"
     },
     {
       "id": "pineapple",
@@ -1752,7 +1808,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "pineapple"
       ],
-      "note": "菠萝作为 Meme 接受外来生活方式时的食物。"
+      "note": "菠萝作为 Meme 接受外来生活方式时的食物。",
+      "spanish": "piña"
     },
     {
       "id": "goosefoot",
@@ -1771,7 +1828,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "goosefoot"
       ],
-      "note": "藜草气味出现在 Úrsula 临终前自然秩序错乱的段落。"
+      "note": "藜草气味出现在 Úrsula 临终前自然秩序错乱的段落。",
+      "spanish": "cenizo / quenopodio"
     },
     {
       "id": "ivy",
@@ -1790,7 +1848,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "ivy"
       ],
-      "note": "常春藤在雨后侵蚀房梁，表现房屋衰败。"
+      "note": "常春藤在雨后侵蚀房梁，表现房屋衰败。",
+      "spanish": "hiedra"
     },
     {
       "id": "nettle",
@@ -1809,7 +1868,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "nettles"
       ],
-      "note": "荨麻束用于净化房屋的民间仪式。"
+      "note": "荨麻束用于净化房屋的民间仪式。",
+      "spanish": "ortiga"
     },
     {
       "id": "plantain",
@@ -1828,7 +1888,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "plantain"
       ],
-      "note": "大蕉是 José Arcadio 死后屋中简朴饮食的一部分。"
+      "note": "大蕉是 José Arcadio 死后屋中简朴饮食的一部分。",
+      "spanish": "plátano"
     },
     {
       "id": "melon",
@@ -1847,7 +1908,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "melons"
       ],
-      "note": "甜瓜作为身体比喻出现。"
+      "note": "甜瓜作为身体比喻出现。",
+      "spanish": "melón"
     },
     {
       "id": "mint",
@@ -1866,7 +1928,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "mint"
       ],
-      "note": "薄荷给 Nigromanta 的汤调味。"
+      "note": "薄荷给 Nigromanta 的汤调味。",
+      "spanish": "menta / hierbabuena"
     },
     {
       "id": "peach",
@@ -1885,7 +1948,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "peaches"
       ],
-      "note": "桃子罐头触发了 Aureliano 对 Amaranta Úrsula 的亲密反应。"
+      "note": "桃子罐头触发了 Aureliano 对 Amaranta Úrsula 的亲密反应。",
+      "spanish": "durazno / melocotón"
     },
     {
       "id": "purslane",
@@ -1904,7 +1968,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "purslane"
       ],
-      "note": "马齿苋被用来给 Nigromanta 的汤加料。"
+      "note": "马齿苋被用来给 Nigromanta 的汤加料。",
+      "spanish": "verdolaga"
     },
     {
       "id": "tomato",
@@ -1923,7 +1988,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "tomato"
       ],
-      "note": "番茄丁作为灭蟑方法之一出现。"
+      "note": "番茄丁作为灭蟑方法之一出现。",
+      "spanish": "tomate"
     },
     {
       "id": "violet",
@@ -1942,7 +2008,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "violets"
       ],
-      "note": "紫罗兰田与 Gaston 的恋爱冒险记忆相连。"
+      "note": "紫罗兰田与 Gaston 的恋爱冒险记忆相连。",
+      "spanish": "violeta"
     },
     {
       "id": "dill",
@@ -1961,7 +2028,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "dill pickles"
       ],
-      "note": "莳萝腌菜连接美国 Prattville 的家庭记忆。"
+      "note": "莳萝腌菜连接美国 Prattville 的家庭记忆。",
+      "spanish": "eneldo"
     },
     {
       "id": "geranium",
@@ -1980,7 +2048,8 @@ window.PLANT_STATS_DATA = {
       "terms": [
         "geraniums"
       ],
-      "note": "天竺葵以古老气味出现，牵出房屋深处的怀旧。"
+      "note": "天竺葵以古老气味出现，牵出房屋深处的怀旧。",
+      "spanish": "geranio"
     }
   ]
 };
