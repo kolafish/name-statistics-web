@@ -520,18 +520,11 @@ td.is-active {
   color: #165f40;
 }
 
-.spanish-line,
 .term-line {
   color: var(--muted);
   font-size: 13px;
   line-height: 1.6;
   overflow-wrap: anywhere;
-}
-
-.spanish-line {
-  margin-bottom: 4px;
-  color: var(--green);
-  font-weight: 780;
 }
 
 .chapter-chips {

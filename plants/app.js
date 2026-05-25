@@ -234,6 +234,14 @@ function renderChapterChips(plant) {
     .join("");
 }
 
+function renderTermLine(item) {
+  const mainEnglish = item.english.toLowerCase();
+  const terms = item.terms.filter((term) => term.toLowerCase() !== mainEnglish);
+  return terms.length
+    ? `<div class="term-line">英文命中：${escapeHtml(terms.join(" · "))}</div>`
+    : "";
+}
+
 function renderPlants(list) {
   const categoryText = state.category === "all" ? "全部类别" : data.categoryLabels[state.category];
   const chapterLabel = state.chapter === "all" ? "全部章节" : `第 ${state.chapter} 章`;
@@ -258,8 +266,7 @@ function renderPlants(list) {
                 <small>${escapeHtml(item.spanish)}</small>
               </h3>
               <p>${escapeHtml(item.note)}</p>
-              <div class="spanish-line">西语名：${escapeHtml(item.spanish)}</div>
-              <div class="term-line">英文命中：${escapeHtml(item.terms.join(" · "))}</div>
+              ${renderTermLine(item)}
               <div class="chapter-chips" aria-label="${escapeHtml(item.zh)}章节分布">
                 ${renderChapterChips(item)}
               </div>
