@@ -179,8 +179,26 @@ function renderList(list) {
             <h2>${item.cue}</h2>
             <div class="highlight-text-grid">
               <div class="source-panel">
-                <span>原文线索</span>
-                <p>${item.sourceCue}</p>
+                <span>原文定位</span>
+                <dl class="source-list">
+                  <div>
+                    <dt>章节</dt>
+                    <dd>第 ${item.chapter} 章</dd>
+                  </div>
+                  <div>
+                    <dt>位置</dt>
+                    <dd>${item.range}</dd>
+                  </div>
+                  <div>
+                    <dt>热度</dt>
+                    <dd>${formatNumber(item.highlightCount)} 人划线</dd>
+                  </div>
+                  <div>
+                    <dt>主题</dt>
+                    <dd>${item.themes.join(" / ")}</dd>
+                  </div>
+                </dl>
+                <p class="source-hint">完整原文请点「微信读书打开」回到原位置查看。</p>
               </div>
               <div class="summary-panel">
                 <span>总结</span>
