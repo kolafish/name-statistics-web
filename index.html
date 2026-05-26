@@ -188,19 +188,20 @@
 
       .quote-card {
         position: absolute;
+        z-index: var(--z, 1);
         display: grid;
         grid-template-rows: minmax(0, 1fr) auto;
         min-width: 0;
         width: min(var(--card-width, 280px), calc(100vw - 42px));
         min-height: 0;
-        border: 1px solid rgba(245, 201, 107, 0.26);
+        border: 1px solid rgba(245, 201, 107, var(--border-alpha, 0.18));
         border-radius: 10px;
         background:
-          linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.025)),
-          rgba(11, 16, 24, 0.38);
+          linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.025)),
+          rgba(11, 16, 24, var(--card-bg, 0.34));
         box-shadow:
           0 18px 44px rgba(0, 0, 0, 0.26),
-          0 0 28px rgba(126, 224, 199, 0.08),
+          0 0 28px rgba(126, 224, 199, var(--glow-alpha, 0.06)),
           inset 0 1px 0 rgba(255, 255, 255, 0.12);
         padding: clamp(10px, 1vw, 14px);
         color: var(--ink);
@@ -208,9 +209,14 @@
           quote-drift-a 18s ease-in-out infinite,
           quote-breathe 4.8s ease-in-out infinite;
         left: var(--x);
+        opacity: var(--card-opacity, 0.72);
         top: var(--y);
+        transform: translate3d(var(--parallax-x, 0), var(--parallax-y, 0), 0)
+          scale(var(--card-scale, 1));
         transition:
           transform 180ms ease,
+          opacity 180ms ease,
+          filter 180ms ease,
           border-color 180ms ease,
           background 180ms ease,
           box-shadow 180ms ease;
@@ -236,10 +242,28 @@
         pointer-events: none;
       }
 
+      .quote-orbit:has(.quote-card:hover) .quote-card:not(:hover) {
+        --card-opacity: 0.34;
+        --card-peak-opacity: 0.42;
+        filter: saturate(0.72) brightness(0.68);
+      }
+
+      .quote-orbit.is-hovering .quote-card:not(.is-active) {
+        --card-opacity: 0.34;
+        --card-peak-opacity: 0.42;
+        filter: saturate(0.72) brightness(0.68);
+      }
+
       .quote-card:hover,
-      .quote-card:focus-within {
+      .quote-card:focus,
+      .quote-card:focus-within,
+      .quote-card.is-active {
         z-index: 20;
+        --card-scale: 1.05;
+        --card-opacity: 1;
+        --card-peak-opacity: 1;
         border-color: rgba(126, 224, 199, 0.62);
+        outline: none;
         background:
           linear-gradient(180deg, rgba(126, 224, 199, 0.14), rgba(255, 255, 255, 0.04)),
           rgba(8, 15, 22, 0.82);
@@ -248,7 +272,6 @@
           0 0 0 3px rgba(126, 224, 199, 0.12),
           inset 0 1px 0 rgba(255, 255, 255, 0.18);
         animation-play-state: paused;
-        transform: translateY(-8px) scale(1.08);
       }
 
       .quote-card blockquote {
@@ -258,17 +281,18 @@
         -webkit-line-clamp: var(--lines, 2);
         margin: 0;
         color: rgba(248, 251, 255, 0.94);
-        font-family: "Songti SC", "STSong", "Noto Serif CJK SC", SimSun, serif;
+        font-family: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", SimSun, serif;
         font-size: var(--quote-size, clamp(12px, 1vw, 16px));
-        font-weight: 700;
+        font-weight: 680;
         line-height: 1.5;
         letter-spacing: 0;
+        text-shadow: 0 2px 18px rgba(0, 0, 0, 0.38);
       }
 
       .quote-card footer {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px 12px;
+        gap: 8px 4px;
         align-items: center;
         justify-content: flex-end;
         margin-top: 8px;
@@ -277,179 +301,274 @@
         font-weight: 760;
       }
 
-      .quote-card footer span {
+      .quote-card footer .highlight-count {
         color: var(--gold);
       }
 
+      .quote-card footer .highlight-unit {
+        color: rgba(248, 251, 255, 0.5);
+      }
+
       .quote-card.rank-1 {
-        --x: 6%;
+        --x: 22%;
         --y: 30%;
-        --card-width: clamp(250px, 27vw, 390px);
-        --quote-size: clamp(18px, 1.7vw, 25px);
+        --z: 8;
+        --card-width: clamp(410px, 39vw, 560px);
+        --quote-size: clamp(22px, 2vw, 30px);
         --lines: 3;
+        --card-opacity: 1;
+        --card-peak-opacity: 1;
+        --card-bg: 0.5;
+        --border-alpha: 0.58;
+        --glow-alpha: 0.28;
+        --depth: 0.8;
+        border-color: rgba(126, 224, 199, 0.68);
+        box-shadow:
+          0 30px 86px rgba(0, 0, 0, 0.5),
+          0 0 0 1px rgba(245, 201, 107, 0.18),
+          0 0 46px rgba(126, 224, 199, 0.2),
+          0 0 76px rgba(245, 201, 107, 0.12),
+          inset 0 1px 0 rgba(255, 255, 255, 0.18);
+      }
+
+      .quote-card.rank-1 blockquote {
+        color: #fffaf0;
+        font-weight: 820;
+        line-height: 1.42;
+        text-shadow:
+          0 2px 24px rgba(0, 0, 0, 0.52),
+          0 0 22px rgba(126, 224, 199, 0.18);
+      }
+
+      .quote-card.rank-1 footer {
+        font-size: 10px;
       }
 
       .quote-card.rank-2 {
-        --x: 55%;
-        --y: 26%;
-        --card-width: clamp(270px, 28vw, 410px);
-        --quote-size: clamp(17px, 1.55vw, 23px);
+        --x: 61%;
+        --y: 34%;
+        --z: 5;
+        --card-width: clamp(300px, 28vw, 410px);
+        --quote-size: clamp(15px, 1.25vw, 19px);
         --lines: 3;
+        --card-opacity: 0.86;
+        --card-peak-opacity: 0.96;
+        --card-bg: 0.4;
+        --border-alpha: 0.3;
+        --glow-alpha: 0.12;
+        --depth: 0.56;
         animation-name: quote-drift-b, quote-breathe;
         animation-duration: 22s, 5.4s;
       }
 
       .quote-card.rank-3 {
-        --x: 37%;
-        --y: 45%;
-        --card-width: clamp(220px, 21vw, 300px);
-        --quote-size: clamp(14px, 1.35vw, 19px);
+        --x: 48%;
+        --y: 6%;
+        --z: 4;
+        --card-width: clamp(230px, 21vw, 300px);
+        --quote-size: clamp(13px, 1.05vw, 16px);
         --lines: 3;
+        --card-opacity: 0.78;
+        --card-peak-opacity: 0.92;
+        --depth: 0.42;
         animation-name: quote-drift-c, quote-breathe;
         animation-duration: 20s, 4.6s;
       }
 
       .quote-card.rank-4 {
-        --x: 62%;
-        --y: 47%;
-        --card-width: clamp(225px, 22vw, 320px);
-        --quote-size: clamp(14px, 1.3vw, 18px);
+        --x: 64%;
+        --y: 68%;
+        --z: 4;
+        --card-width: clamp(230px, 21vw, 315px);
+        --quote-size: clamp(13px, 1.05vw, 16px);
         --lines: 3;
+        --card-opacity: 0.76;
+        --card-peak-opacity: 0.9;
+        --depth: 0.4;
         animation-name: quote-drift-d, quote-breathe;
         animation-duration: 24s, 5.2s;
       }
 
       .quote-card.rank-5 {
-        --x: 22%;
-        --y: 66%;
-        --card-width: clamp(220px, 22vw, 310px);
-        --quote-size: clamp(14px, 1.3vw, 18px);
+        --x: 15%;
+        --y: 70%;
+        --z: 4;
+        --card-width: clamp(230px, 22vw, 320px);
+        --quote-size: clamp(13px, 1.05vw, 16px);
         --lines: 3;
+        --card-opacity: 0.76;
+        --card-peak-opacity: 0.9;
+        --depth: 0.38;
         animation-name: quote-drift-c, quote-breathe;
         animation-duration: 19s, 5.8s;
       }
 
       .quote-card.rank-6 {
-        --x: 32%;
-        --y: 11%;
-        --card-width: clamp(170px, 16vw, 240px);
-        --quote-size: clamp(12px, 1.05vw, 15px);
+        --x: 9%;
+        --y: 23%;
+        --card-width: clamp(180px, 16vw, 235px);
+        --quote-size: clamp(11px, 0.92vw, 14px);
+        --card-opacity: 0.62;
+        --card-peak-opacity: 0.78;
+        --depth: 0.26;
         animation-name: quote-drift-b, quote-breathe;
         animation-duration: 21s, 4.4s;
       }
 
       .quote-card.rank-7 {
         --x: 5%;
-        --y: 67%;
-        --card-width: clamp(190px, 19vw, 270px);
-        --quote-size: clamp(12px, 1.1vw, 16px);
+        --y: 56%;
+        --card-width: clamp(190px, 18vw, 260px);
+        --quote-size: clamp(11px, 0.94vw, 14px);
+        --card-opacity: 0.6;
+        --card-peak-opacity: 0.76;
+        --depth: 0.24;
         animation-name: quote-drift-a, quote-breathe;
         animation-duration: 23s, 4.8s;
       }
 
       .quote-card.rank-8 {
-        --x: 76%;
-        --y: 36%;
-        --card-width: clamp(190px, 18vw, 260px);
-        --quote-size: clamp(12px, 1.05vw, 15px);
+        --x: 80%;
+        --y: 28%;
+        --card-width: clamp(185px, 17vw, 250px);
+        --quote-size: clamp(11px, 0.94vw, 14px);
+        --card-opacity: 0.6;
+        --card-peak-opacity: 0.76;
+        --depth: 0.22;
         animation-name: quote-drift-d, quote-breathe;
         animation-duration: 18s, 5.6s;
       }
 
       .quote-card.rank-9 {
-        --x: 44%;
-        --y: 3%;
-        --card-width: clamp(180px, 17vw, 240px);
-        --quote-size: clamp(12px, 1.05vw, 15px);
+        --x: 34%;
+        --y: 5%;
+        --card-width: clamp(180px, 16vw, 230px);
+        --quote-size: clamp(11px, 0.9vw, 13px);
+        --card-opacity: 0.54;
+        --card-peak-opacity: 0.7;
+        --depth: 0.18;
         animation-name: quote-drift-b, quote-breathe;
       }
 
       .quote-card.rank-10 {
-        --x: 78%;
-        --y: 7%;
-        --card-width: clamp(170px, 16vw, 230px);
-        --quote-size: clamp(12px, 1vw, 14px);
+        --x: 83%;
+        --y: 58%;
+        --card-width: clamp(165px, 15vw, 220px);
+        --quote-size: clamp(10px, 0.84vw, 13px);
+        --card-opacity: 0.52;
+        --card-peak-opacity: 0.68;
+        --depth: 0.16;
         animation-name: quote-drift-c, quote-breathe;
       }
 
       .quote-card.rank-11 {
-        --x: 13%;
-        --y: 9%;
-        --card-width: clamp(170px, 16vw, 230px);
-        --quote-size: clamp(12px, 1vw, 14px);
+        --x: 20%;
+        --y: 8%;
+        --card-width: clamp(165px, 15vw, 220px);
+        --quote-size: clamp(10px, 0.84vw, 13px);
+        --card-opacity: 0.5;
+        --card-peak-opacity: 0.66;
+        --depth: 0.14;
         animation-name: quote-drift-d, quote-breathe;
       }
 
       .quote-card.rank-12 {
-        --x: 53%;
-        --y: 72%;
-        --card-width: clamp(230px, 24vw, 330px);
-        --quote-size: clamp(12px, 1vw, 14px);
+        --x: 45%;
+        --y: 77%;
+        --card-width: clamp(210px, 19vw, 285px);
+        --quote-size: clamp(10px, 0.84vw, 13px);
         --lines: 3;
+        --card-opacity: 0.5;
+        --card-peak-opacity: 0.66;
+        --depth: 0.14;
         animation-name: quote-drift-a, quote-breathe;
       }
 
       .quote-card.rank-13 {
-        --x: 25%;
-        --y: 43%;
-        --card-width: clamp(180px, 17vw, 240px);
-        --quote-size: clamp(12px, 1vw, 14px);
+        --x: 4%;
+        --y: 78%;
+        --card-width: clamp(170px, 15vw, 220px);
+        --quote-size: clamp(10px, 0.82vw, 12px);
+        --card-opacity: 0.44;
+        --card-peak-opacity: 0.58;
+        --depth: 0.1;
         animation-name: quote-drift-d, quote-breathe;
       }
 
       .quote-card.rank-14 {
-        --x: 73%;
-        --y: 68%;
-        --card-width: clamp(200px, 20vw, 290px);
-        --quote-size: clamp(12px, 1vw, 14px);
+        --x: 71%;
+        --y: 82%;
+        --card-width: clamp(185px, 17vw, 245px);
+        --quote-size: clamp(10px, 0.82vw, 12px);
+        --card-opacity: 0.44;
+        --card-peak-opacity: 0.58;
+        --depth: 0.1;
         animation-name: quote-drift-b, quote-breathe;
       }
 
       .quote-card.rank-15 {
-        --x: 1%;
-        --y: 8%;
-        --card-width: clamp(170px, 16vw, 230px);
-        --quote-size: clamp(12px, 1vw, 14px);
+        --x: 2%;
+        --y: 5%;
+        --card-width: clamp(160px, 14vw, 205px);
+        --quote-size: clamp(10px, 0.8vw, 12px);
+        --card-opacity: 0.42;
+        --card-peak-opacity: 0.56;
+        --depth: 0.08;
         animation-name: quote-drift-c, quote-breathe;
       }
 
       .quote-card.rank-16 {
-        --x: 2%;
-        --y: 50%;
-        --card-width: clamp(170px, 16vw, 230px);
-        --quote-size: clamp(12px, 1vw, 14px);
+        --x: 68%;
+        --y: 3%;
+        --card-width: clamp(160px, 14vw, 205px);
+        --quote-size: clamp(10px, 0.8vw, 12px);
+        --card-opacity: 0.42;
+        --card-peak-opacity: 0.56;
+        --depth: 0.08;
         animation-name: quote-drift-b, quote-breathe;
       }
 
       .quote-card.rank-17 {
-        --x: 82%;
-        --y: 55%;
-        --card-width: clamp(170px, 16vw, 230px);
-        --quote-size: clamp(11px, 0.95vw, 13px);
+        --x: 84%;
+        --y: 41%;
+        --card-width: clamp(155px, 13vw, 195px);
+        --quote-size: clamp(10px, 0.78vw, 12px);
+        --card-opacity: 0.4;
+        --card-peak-opacity: 0.54;
+        --depth: 0.06;
         animation-name: quote-drift-a, quote-breathe;
       }
 
       .quote-card.rank-18 {
-        --x: 60%;
+        --x: 86%;
         --y: 7%;
-        --card-width: clamp(160px, 15vw, 210px);
-        --quote-size: clamp(11px, 0.95vw, 13px);
+        --card-width: clamp(145px, 12vw, 185px);
+        --quote-size: clamp(10px, 0.78vw, 12px);
+        --card-opacity: 0.38;
+        --card-peak-opacity: 0.52;
+        --depth: 0.06;
         animation-name: quote-drift-d, quote-breathe;
       }
 
       .quote-card.rank-19 {
-        --x: 42%;
-        --y: 30%;
-        --card-width: clamp(190px, 18vw, 260px);
-        --quote-size: clamp(11px, 0.95vw, 13px);
+        --x: 49%;
+        --y: 58%;
+        --card-width: clamp(180px, 16vw, 230px);
+        --quote-size: clamp(10px, 0.8vw, 12px);
+        --card-opacity: 0.4;
+        --card-peak-opacity: 0.54;
+        --depth: 0.06;
         animation-name: quote-drift-c, quote-breathe;
       }
 
       .quote-card.rank-20 {
-        --x: 39%;
-        --y: 76%;
-        --card-width: clamp(190px, 18vw, 260px);
-        --quote-size: clamp(11px, 0.95vw, 13px);
+        --x: 29%;
+        --y: 82%;
+        --card-width: clamp(165px, 15vw, 210px);
+        --quote-size: clamp(10px, 0.8vw, 12px);
+        --card-opacity: 0.38;
+        --card-peak-opacity: 0.52;
+        --depth: 0.06;
         animation-name: quote-drift-b, quote-breathe;
       }
 
@@ -584,11 +703,11 @@
       @keyframes quote-breathe {
         0%,
         100% {
-          opacity: 0.82;
+          opacity: var(--card-opacity, 0.72);
         }
 
         50% {
-          opacity: 1;
+          opacity: var(--card-peak-opacity, 0.9);
         }
       }
 
@@ -796,10 +915,10 @@
           left: var(--x);
           top: var(--y);
           margin: 0;
-          width: min(var(--card-width, 220px), 58vw);
+          width: min(var(--card-width, 220px), 72vw);
           min-height: 0;
           padding: 10px;
-          --quote-size: clamp(13px, 3.6vw, 17px);
+          --quote-size: clamp(11px, 3vw, 15px);
           --lines: 2;
         }
 
@@ -809,51 +928,59 @@
         }
 
         .quote-card.rank-1 {
-          --x: 4%;
-          --y: 5%;
-          --card-width: 230px;
+          --x: 8%;
+          --y: 24%;
+          --card-width: 280px;
+          --quote-size: clamp(18px, 5.3vw, 22px);
+          --lines: 3;
+          --card-bg: 0.72;
+        }
+
+        .quote-card:not(.rank-1) {
+          --card-opacity: 0.34;
+          --card-peak-opacity: 0.48;
         }
 
         .quote-card.rank-2 {
-          --x: 38%;
-          --y: 17%;
-          --card-width: 220px;
+          --x: 34%;
+          --y: 9%;
+          --card-width: 230px;
         }
 
         .quote-card.rank-3 {
-          --x: 8%;
-          --y: 32%;
-          --card-width: 210px;
+          --x: 3%;
+          --y: 6%;
+          --card-width: 190px;
         }
 
         .quote-card.rank-4 {
           --x: 42%;
-          --y: 43%;
-          --card-width: 210px;
+          --y: 57%;
+          --card-width: 200px;
         }
 
         .quote-card.rank-5 {
-          --x: 5%;
-          --y: 56%;
+          --x: 2%;
+          --y: 67%;
           --card-width: 220px;
         }
 
         .quote-card.rank-6 {
-          --x: 39%;
-          --y: 66%;
-          --card-width: 190px;
+          --x: 54%;
+          --y: 36%;
+          --card-width: 175px;
         }
 
         .quote-card.rank-7 {
-          --x: 7%;
-          --y: 77%;
-          --card-width: 210px;
+          --x: 1%;
+          --y: 49%;
+          --card-width: 175px;
         }
 
         .quote-card.rank-8 {
-          --x: 44%;
-          --y: 84%;
-          --card-width: 190px;
+          --x: 52%;
+          --y: 76%;
+          --card-width: 160px;
         }
 
         a.card {
@@ -903,83 +1030,83 @@
         <div class="quote-orbit" aria-label="热门划线精选">
           <article class="quote-card rank-1">
             <blockquote>「多年以后，面对行刑队，奥雷里亚诺·布恩迪亚上校将会回想起父亲带他去见识冰块的那个遥远的下午。」</blockquote>
-            <footer>—— 微信读书 <span>65,760 人划线</span></footer>
+            <footer>—— 微信读书 <span class="highlight-count">65,760</span><span class="highlight-unit"> 人划线</span></footer>
           </article>
           <article class="quote-card rank-2">
             <blockquote>「这座镜子之城——或蜃景之城——将在奥雷里亚诺·巴比伦全部译出羊皮卷之时被飓风抹去，从世人记忆中根除，羊皮卷上所载一切自永远至永远不会再重复，因为注定经受百年孤独的家族不会有第二次机会在大地上出现。」</blockquote>
-            <footer>—— 微信读书 <span>44,642 人划线</span></footer>
+            <footer>—— 微信读书 <span class="highlight-count">44,642</span><span class="highlight-unit"> 人划线</span></footer>
           </article>
           <article class="quote-card rank-3">
             <blockquote>「在最后一刻的慌乱中，悲伤的醉汉们抬棺材出家门时弄混了，把两人各自下葬在对方的坟墓里。」</blockquote>
-            <footer>—— 微信读书 <span>37,510 人划线</span></footer>
+            <footer>—— 微信读书 <span class="highlight-count">37,510</span><span class="highlight-unit"> 人划线</span></footer>
           </article>
           <article class="quote-card rank-4">
             <blockquote>「你那么憎恨军人，跟他们斗了那么久，琢磨了他们那么久，最终却变得和他们一样。人世间没有任何理想值得以这样的沉沦作为代价。」</blockquote>
-            <footer>—— 微信读书 <span>32,912 人划线</span></footer>
+            <footer>—— 微信读书 <span class="highlight-count">32,912</span><span class="highlight-unit"> 人划线</span></footer>
           </article>
           <article class="quote-card rank-5">
             <blockquote>「不论在什么地方都要记住，过去都是假的，回忆没有归路，春天总是一去不返，最疯狂执著的爱情也终究是过眼云烟。」</blockquote>
-            <footer>—— 微信读书 <span>27,945 人划线</span></footer>
+            <footer>—— 微信读书 <span class="highlight-count">27,945</span><span class="highlight-unit"> 人划线</span></footer>
           </article>
           <article class="quote-card rank-6">
             <blockquote>「『只要上帝还让我活着，』她时常这样说，『这个净出疯子的家里就缺不了钱。』」</blockquote>
-            <footer>—— 微信读书 <span>22,336 人划线</span></footer>
+            <footer>—— 微信读书 <span class="highlight-count">22,336</span><span class="highlight-unit"> 人划线</span></footer>
           </article>
           <article class="quote-card rank-7">
             <blockquote>「乌尔苏拉没有追上吉卜赛人，却找到了丈夫在失败的远征中没能发现的通向伟大发明的道路。」</blockquote>
-            <footer>—— 微信读书 <span>19,935 人划线</span></footer>
+            <footer>—— 微信读书 <span class="highlight-count">19,935</span><span class="highlight-unit"> 人划线</span></footer>
           </article>
           <article class="quote-card rank-8">
             <blockquote>「她辛苦多年忍受折磨好不容易赢得的孤独特权，绝不肯用来换取一个被虚假迷人的怜悯打扰的晚年。」</blockquote>
-            <footer>—— 微信读书 <span>19,432 人划线</span></footer>
+            <footer>—— 微信读书 <span class="highlight-count">19,432</span><span class="highlight-unit"> 人划线</span></footer>
           </article>
           <article class="quote-card rank-9">
             <blockquote>「『科学消除了距离，』梅尔基亚德斯说，『用不了多久，人们不出家门就能看到世界上任何地方发生的事情。』」</blockquote>
-            <footer>—— 微信读书 <span>18,288 人划线</span></footer>
+            <footer>—— 微信读书 <span class="highlight-count">18,288</span><span class="highlight-unit"> 人划线</span></footer>
           </article>
           <article class="quote-card rank-10">
             <blockquote>「『别天真了，克雷斯皮，』她微笑着，『我死也不会和你结婚的。』」</blockquote>
-            <footer>—— 微信读书 <span>18,015 人划线</span></footer>
+            <footer>—— 微信读书 <span class="highlight-count">18,015</span><span class="highlight-unit"> 人划线</span></footer>
           </article>
           <article class="quote-card rank-11">
             <blockquote>「他的确一度死去，但难以忍受孤独又重返人世。」</blockquote>
-            <footer>—— 微信读书 <span>17,910 人划线</span></footer>
+            <footer>—— 微信读书 <span class="highlight-count">17,910</span><span class="highlight-unit"> 人划线</span></footer>
           </article>
           <article class="quote-card rank-12">
             <blockquote>「『告诉我女人，』他声音非常平静，『给女儿起名乌尔苏拉。』他顿了一下，重复道，『乌尔苏拉，跟她祖母一样。再告诉她如果生了男孩，就叫他何塞·阿尔卡蒂奥，但不是随他伯父的名字，而是随他祖父。』」</blockquote>
-            <footer>—— 微信读书 <span>17,510 人划线</span></footer>
+            <footer>—— 微信读书 <span class="highlight-count">17,510</span><span class="highlight-unit"> 人划线</span></footer>
           </article>
           <article class="quote-card rank-13">
             <blockquote>「在这纷乱的合奏中，皮埃特罗·克雷斯皮伏在店后的写字台上，双腕用剃刀割破，双手浸没在一盆安息香水里。」</blockquote>
-            <footer>—— 微信读书 <span>17,200 人划线</span></footer>
+            <footer>—— 微信读书 <span class="highlight-count">17,200</span><span class="highlight-unit"> 人划线</span></footer>
           </article>
           <article class="quote-card rank-14">
             <blockquote>「奥雷里亚诺·布恩迪亚上校没有显出丝毫不快，但在私人卫队将那位寡妇的家舍夷为平地化为灰烬之后，他的心才恢复平静。」</blockquote>
-            <footer>—— 微信读书 <span>17,200 人划线</span></footer>
+            <footer>—— 微信读书 <span class="highlight-count">17,200</span><span class="highlight-unit"> 人划线</span></footer>
           </article>
           <article class="quote-card rank-15">
             <blockquote>「『奥雷里亚诺，』他悲伤地敲下发报键，『马孔多在下雨。』」</blockquote>
-            <footer>—— 微信读书 <span>17,112 人划线</span></footer>
+            <footer>—— 微信读书 <span class="highlight-count">17,112</span><span class="highlight-unit"> 人划线</span></footer>
           </article>
           <article class="quote-card rank-16">
             <blockquote>「『我们还没有死人，』他说，『只要没有死人埋在地下，你就不属于这个地方。』」</blockquote>
-            <footer>—— 微信读书 <span>16,677 人划线</span></footer>
+            <footer>—— 微信读书 <span class="highlight-count">16,677</span><span class="highlight-unit"> 人划线</span></footer>
           </article>
           <article class="quote-card rank-17">
             <blockquote>「她死在圣星期四一早。人们最后一次帮她数算年龄是在香蕉公司时期，当时得出的结果在一百一十五到一百二十二岁之间。」</blockquote>
-            <footer>—— 微信读书 <span>15,984 人划线</span></footer>
+            <footer>—— 微信读书 <span class="highlight-count">15,984</span><span class="highlight-unit"> 人划线</span></footer>
           </article>
           <article class="quote-card rank-18">
             <blockquote>「它的确是一处乐土，没人超过三十岁，也没人死去。」</blockquote>
-            <footer>—— 微信读书 <span>15,405 人划线</span></footer>
+            <footer>—— 微信读书 <span class="highlight-count">15,405</span><span class="highlight-unit"> 人划线</span></footer>
           </article>
           <article class="quote-card rank-19">
             <blockquote>「他在波斯得过蜀黍红斑病，在马来群岛患上坏血病，在亚历山大生过麻风病，在日本染上脚气病，在马达加斯加患过腺鼠疫，在西西里碰上地震，在麦哲伦海峡遭遇重大海难，却都大难不死。」</blockquote>
-            <footer>—— 微信读书 <span>15,192 人划线</span></footer>
+            <footer>—— 微信读书 <span class="highlight-count">15,192</span><span class="highlight-unit"> 人划线</span></footer>
           </article>
           <article class="quote-card rank-20">
             <blockquote>「『我谁也不嫁，』她告诉他，『尤其不嫁给你。你太爱奥雷里亚诺才想跟我结婚，因为你没法跟他结婚。』」</blockquote>
-            <footer>—— 微信读书 <span>15,171 人划线</span></footer>
+            <footer>—— 微信读书 <span class="highlight-count">15,171</span><span class="highlight-unit"> 人划线</span></footer>
           </article>
         </div>
       </section>
@@ -1021,5 +1148,61 @@
         </a>
       </section>
     </main>
+    <script>
+      (() => {
+        const orbit = document.querySelector(".quote-orbit");
+        if (!orbit) return;
+
+        const cards = Array.from(orbit.querySelectorAll(".quote-card"));
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        let frame = 0;
+        let pointer = { x: 0, y: 0 };
+
+        cards.forEach((card, index) => {
+          card.tabIndex = 0;
+          const depth = Number.parseFloat(getComputedStyle(card).getPropertyValue("--depth"));
+          card.dataset.depth = Number.isFinite(depth) ? String(depth) : String(Math.max(0.06, 0.68 - index * 0.035));
+
+          card.addEventListener("focus", () => {
+            orbit.classList.add("is-hovering");
+            card.classList.add("is-active");
+          });
+
+          card.addEventListener("blur", () => {
+            card.classList.remove("is-active");
+            if (!orbit.querySelector(".quote-card.is-active")) {
+              orbit.classList.remove("is-hovering");
+            }
+          });
+        });
+
+        const applyParallax = () => {
+          frame = 0;
+          cards.forEach((card) => {
+            const depth = Number.parseFloat(card.dataset.depth) || 0.1;
+            card.style.setProperty("--parallax-x", `${(pointer.x * depth).toFixed(2)}px`);
+            card.style.setProperty("--parallax-y", `${(pointer.y * depth).toFixed(2)}px`);
+          });
+        };
+
+        const queueParallax = (event) => {
+          if (reduceMotion.matches) return;
+          const rect = orbit.getBoundingClientRect();
+          pointer = {
+            x: ((event.clientX - rect.left) / rect.width - 0.5) * 24,
+            y: ((event.clientY - rect.top) / rect.height - 0.5) * 18,
+          };
+          if (!frame) frame = window.requestAnimationFrame(applyParallax);
+        };
+
+        const resetParallax = () => {
+          pointer = { x: 0, y: 0 };
+          if (!frame) frame = window.requestAnimationFrame(applyParallax);
+        };
+
+        orbit.addEventListener("pointermove", queueParallax);
+        orbit.addEventListener("pointerleave", resetParallax);
+      })();
+    </script>
   </body>
 </html>
