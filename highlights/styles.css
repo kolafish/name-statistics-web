@@ -399,8 +399,8 @@ select:focus {
   background: #f8fbff;
 }
 
-.source-panel span,
-.summary-panel span,
+.source-panel .panel-label,
+.summary-panel .panel-label,
 .comment-section span {
   display: block;
   margin-bottom: 6px;
@@ -414,6 +414,30 @@ select:focus {
   margin-bottom: 0;
   color: var(--ink);
   line-height: 1.75;
+}
+
+.quote-hint {
+  font-size: 16px;
+  font-weight: 780;
+}
+
+.source-terms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.source-terms span {
+  display: inline-flex;
+  min-height: 24px;
+  align-items: center;
+  border-radius: 999px;
+  background: #eef4fb;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 760;
+  padding: 3px 9px;
 }
 
 .theme-list {

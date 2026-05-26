@@ -44,6 +44,14 @@ function escapeAttribute(value) {
   return String(value).replace(/&/g, "&amp;").replace(/"/g, "&quot;");
 }
 
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
 function rangeStart(item) {
   return Number(String(item.range).split("-")[0]) || 0;
 }
@@ -85,7 +93,8 @@ function filteredHighlights(scope) {
     const text = [
       item.chapter,
       item.cue,
-      item.sourceCue,
+      item.quoteHint,
+      ...(item.sourceTerms || []),
       item.summary,
       item.themes.join(" "),
       ...item.comments.flatMap((comment) => [comment.author, comment.excerpt, comment.summary]),
@@ -229,6 +238,19 @@ function renderComments(item) {
     .join("");
 }
 
+function renderSourcePanel(item) {
+  const terms = item.sourceTerms || [];
+  return `
+    <span class="panel-label">划线短摘录</span>
+    <p class="quote-hint">“${escapeHtml(item.quoteHint || item.cue)}”</p>
+    ${
+      terms.length
+        ? `<div class="source-terms">${terms.map((term) => `<span>${escapeHtml(term)}</span>`).join("")}</div>`
+        : ""
+    }
+  `;
+}
+
 function renderList(list, scope) {
   if (!list.length) {
     els.list.innerHTML = '<article class="empty-state">没有匹配的热门划线。</article>';
@@ -251,11 +273,10 @@ function renderList(list, scope) {
             <h2>${item.cue}</h2>
             <div class="highlight-text-grid">
               <div class="source-panel">
-                <span>原文线索</span>
-                <p>${item.sourceCue}</p>
+                ${renderSourcePanel(item)}
               </div>
               <div class="summary-panel">
-                <span>总结</span>
+                <span class="panel-label">总结</span>
                 <p>${item.summary}</p>
               </div>
             </div>
