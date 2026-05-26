@@ -30,6 +30,14 @@ function rangeLink(item) {
   return `weread://bestbookmark?bookId=${data.book.bookId}&chapterUid=${item.chapterUid}&rangeStart=${start}&rangeEnd=${end}`;
 }
 
+function bookSearchLink() {
+  return `https://weread.qq.com/web/search/books?keyword=${encodeURIComponent(data.book.title)}`;
+}
+
+function escapeAttribute(value) {
+  return String(value).replace(/&/g, "&amp;").replace(/"/g, "&quot;");
+}
+
 function topCommentLikes(item) {
   return Math.max(...item.comments.map((comment) => comment.likes), 0);
 }
@@ -179,26 +187,8 @@ function renderList(list) {
             <h2>${item.cue}</h2>
             <div class="highlight-text-grid">
               <div class="source-panel">
-                <span>原文定位</span>
-                <dl class="source-list">
-                  <div>
-                    <dt>章节</dt>
-                    <dd>第 ${item.chapter} 章</dd>
-                  </div>
-                  <div>
-                    <dt>位置</dt>
-                    <dd>${item.range}</dd>
-                  </div>
-                  <div>
-                    <dt>热度</dt>
-                    <dd>${formatNumber(item.highlightCount)} 人划线</dd>
-                  </div>
-                  <div>
-                    <dt>主题</dt>
-                    <dd>${item.themes.join(" / ")}</dd>
-                  </div>
-                </dl>
-                <p class="source-hint">完整原文请点「微信读书打开」回到原位置查看。</p>
+                <span>原文线索</span>
+                <p>${item.sourceCue}</p>
               </div>
               <div class="summary-panel">
                 <span>总结</span>
@@ -232,11 +222,57 @@ function renderList(list) {
                 .join("")}
             </div>
           </div>
-          <a class="open-link" href="${rangeLink(item)}">微信读书打开</a>
+          <div class="card-actions">
+            <a class="open-link" href="${bookSearchLink()}" target="_blank" rel="noopener">打开网页版</a>
+            <button class="copy-link" type="button" data-app-link="${escapeAttribute(rangeLink(item))}">复制 App 定位</button>
+          </div>
         </article>
       `,
     )
     .join("");
+
+  bindCopyButtons();
+}
+
+function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(text);
+  }
+
+  return new Promise((resolve, reject) => {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.left = "-9999px";
+    document.body.appendChild(textarea);
+    textarea.select();
+
+    try {
+      document.execCommand("copy") ? resolve() : reject(new Error("copy failed"));
+    } catch (error) {
+      reject(error);
+    } finally {
+      document.body.removeChild(textarea);
+    }
+  });
+}
+
+function bindCopyButtons() {
+  document.querySelectorAll("[data-app-link]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const originalText = button.textContent;
+      try {
+        await copyText(button.dataset.appLink);
+        button.textContent = "已复制";
+      } catch {
+        button.textContent = "复制失败";
+      }
+      setTimeout(() => {
+        button.textContent = originalText;
+      }, 1400);
+    });
+  });
 }
 
 function render() {

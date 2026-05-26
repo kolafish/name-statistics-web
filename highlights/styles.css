@@ -410,42 +410,6 @@ select:focus {
   line-height: 1.75;
 }
 
-.source-list {
-  display: grid;
-  gap: 9px;
-  margin: 0;
-}
-
-.source-list div {
-  display: grid;
-  grid-template-columns: 54px minmax(0, 1fr);
-  gap: 10px;
-  align-items: baseline;
-}
-
-.source-list dt {
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 780;
-}
-
-.source-list dd {
-  min-width: 0;
-  margin: 0;
-  color: var(--ink);
-  font-size: 13px;
-  line-height: 1.55;
-  overflow-wrap: anywhere;
-}
-
-.source-hint {
-  margin-top: 12px;
-  border-top: 1px solid var(--line);
-  padding-top: 10px;
-  color: var(--muted) !important;
-  font-size: 12px;
-}
-
 .theme-list {
   display: flex;
   flex-wrap: wrap;
@@ -502,7 +466,14 @@ select:focus {
   font-size: 12px;
 }
 
-.open-link {
+.card-actions {
+  display: grid;
+  gap: 8px;
+  min-width: 128px;
+}
+
+.open-link,
+.copy-link {
   display: inline-flex;
   min-height: 38px;
   align-items: center;
@@ -518,8 +489,14 @@ select:focus {
   white-space: nowrap;
 }
 
+.copy-link {
+  cursor: pointer;
+}
+
 .open-link:hover,
-.open-link:focus-visible {
+.open-link:focus-visible,
+.copy-link:hover,
+.copy-link:focus-visible {
   border-color: rgba(31, 99, 166, 0.5);
   background: #e3f0ff;
 }
@@ -550,7 +527,8 @@ select:focus {
     gap: 12px;
   }
 
-  .open-link {
+  .open-link,
+  .copy-link {
     width: 100%;
   }
 }
