@@ -276,7 +276,7 @@ function renderList(list, scope) {
                 ${renderSourcePanel(item)}
               </div>
               <div class="summary-panel">
-                <span class="panel-label">总结</span>
+                <span class="panel-label">内容总结</span>
                 <p>${item.summary}</p>
               </div>
             </div>
